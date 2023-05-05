@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form2" name="form2" method="post" action="addtsm#about">
+  <table width="200" border="1" class="table table-hover">
+    <tr>
+      <th colspan="5" scope="row">Train Service Management </th>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td>Address</td>
+      <td>Phone</td>
+      <td>Email</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['fname']}}  {{i['lname']}}</th>
+      <td>{{i['place']}} {{i['post']}} {{i['pin']}}</td>
+      <td>{{i['phone']}}</td>
+      <td>&nbsp;{{i['email']}}</td>
+      <td><p><a href="edit_trainservice?id={{i['lid']}}">Edit</a></p>
+          <p><a href="delete_trainservice?id={{i['serviceid']}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="5" scope="row"> <label>
+        <input type="submit" name="Submit" value="Add" />
+        </label>
+      </th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

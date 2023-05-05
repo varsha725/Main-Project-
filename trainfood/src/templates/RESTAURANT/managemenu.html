@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'RESTAURANT/adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form2" name="form2" method="post" action="additem">
+  <table width="367" border="1" class="table">
+    <tr>
+      <th colspan="5" scope="row">Manage Menu </th>
+    </tr>
+    <tr>
+      <th width="63" scope="row">Item </th>
+      <th width="52" scope="row">Image</th>
+      <td width="48">Details</td>
+      <td width="65">Price</td>
+      <td width="65">Quantity</td>
+      <td width="105">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th>{{i['items']}}</th>
+      <th ><img  src="../static/image/{{i['image']}}" width="100" height="100"></th>
+      <td>&nbsp;{{i['details']}}</td>
+      <td>{{i['price']}}</td>
+      <td>{{i['qty']}}</td>
+      <td><p><a href="edititem?id={{i['menuid']}}">Edit</a></p>
+          <p><a href="deleteitem?id={{i['menuid']}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+      <th colspan="5" scope="row"> <label>
+        <input type="submit" name="Submit" value="Add" />
+        </label>
+      </th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

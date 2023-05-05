@@ -1,0 +1,70 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'RESTAURANT/adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form7" name="form7" method="post" action="additem_post" enctype="multipart/form-data">
+  <table width="434" border="1" class="table">
+    <tr>
+      <th colspan="2" scope="row">Add Item </th>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"> <label> Type:
+        <select name="select">
+          <option value="veg">Veg</option>
+          <option value="non-veg">Non Veg</option>
+            </select>
+        </label>      </th>
+    </tr>
+    <tr>
+      <th width="81" scope="row">Item</th>
+      <td width="337"><label>
+        <input type="text" name="textfield" />
+        </label>      </td>
+    </tr>
+    <tr>
+      <th scope="row">Image</th>
+      <td><label></label>
+          <label>
+          <input type="file" name="file" />
+          </label>      </td>
+    </tr>
+    <tr>
+      <th scope="row">Details</th>
+      <td><label>
+        <input type="text" name="textfield3" />
+        </label>      </td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><label>
+        <input type="date" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td><label>
+        <input type="text" name="textfield4" />
+        </label>      </td>
+    </tr>
+    <tr>
+      <th scope="row">Quantity</th>
+      <td><label>
+        <input type="text" name="textfield5" />
+        </label>      </td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"> <label>
+        <input type="submit" name="Submit" value="Add" />
+        </label>      </th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

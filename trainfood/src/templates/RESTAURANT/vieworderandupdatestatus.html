@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'RESTAURANT/adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="757" border="1" class="table">
+    <tr>
+      <th colspan="9" scope="row">View Order and Update Status </th>
+    </tr>
+    <tr>
+      <th width="64" height="31" scope="row">Name</th>
+      <td width="57">Item</td>
+      <td width="51">Quantity</td>
+      <td width="61">Price</td>
+      <td width="66">Total Amt </td>
+      <td width="85">Train Name </td>
+      <td width="107">Date  </td>
+      <td width="104">Station</td>
+      <td width="104">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['Fname']}}{{i['lname']}}</th>
+      <td>{{i['items']}}</td>
+      <td>{{i['quantity']}}</td>
+      <td>{{i['price']}}</td>
+      <td>{{i['total']}}</td>
+      <td>{{i['trainname']}}</td>
+      <td> {{i['dt']}}</td>
+      <td>{{i['station']}}</td>
+      <td><p><a href="acceptorder?id={{i['orderid']}}">Accept</a></p>
+          <p><a href="rejectorder?id={{i['orderid']}}">Reject</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

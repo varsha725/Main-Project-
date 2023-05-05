@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'RESTAURANT/adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form7" name="form7" method="post" action="allocates" enctype="multipart/form-data">
+  <table width="434" border="1" class="table">
+
+    <tr>
+      <th colspan="2" scope="row"> <label> DELIVERY BOY:
+        <select name="select">
+          {% for i in val %}
+          <option value="{{i['lid']}}">{{i['name']}}</option>
+          {% endfor %}
+            </select>
+        </label>      </th>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"> <label>
+        <input type="submit" name="Submit" value="Add" />
+        </label>      </th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
